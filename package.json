@@ -48,6 +48,8 @@
     "vitest": "^4.1.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "dev": "vite dev",
     "format": "prettier --write .",
