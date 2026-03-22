@@ -39,12 +39,12 @@ const AboutPage = () => {
             </div>
           </div>
 
-          <div className="bg-surface-container-low p-5 rounded-2xl text-center">
+          {/* <div className="bg-surface-container-low p-5 rounded-2xl text-center">
             <p className="font-['Space_Grotesk'] text-[40px] font-bold text-primary leading-none">99.8%</p>
             <p className="text-[10px] text-outline uppercase tracking-widest mt-2 font-['Space_Grotesk']">
               QA Accuracy Rate
             </p>
-          </div>
+          </div> */}
         </div>
 
         {/* Bio text */}

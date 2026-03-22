@@ -4,17 +4,17 @@ import SocialButtons from "@/components/Layout/Sider/SocialButtons";
 
 const Sider = () => {
   return (
-    <aside className="h-screen w-64 fixed left-0 top-0 border-r border-slate-200/20 bg-slate-50/80 backdrop-blur-xl flex flex-col p-6 space-y-8 z-50">
+    <aside className="hidden md:flex h-screen w-64 fixed left-0 top-0 border-r border-slate-200/20 bg-slate-50/80 backdrop-blur-xl flex-col p-6 space-y-8 z-50">
       <AvatarBox />
       <RouteButtons />
-      <a
+      {/* <a
         href="/Zoraiz_Sibtain_Resume.pdf"
         target="_blank"
         rel="noopener noreferrer"
         className="bg-primary text-on-primary font-['Inter'] font-semibold py-3 px-4 rounded-xl text-sm text-center hover:opacity-90 transition-opacity"
       >
         Download CV
-      </a>
+      </a> */}
       <SocialButtons />
     </aside>
   );
