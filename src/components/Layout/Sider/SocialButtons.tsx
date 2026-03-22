@@ -1,42 +1,24 @@
-import {FaGithub, FaLinkedin} from 'react-icons/fa';
-import {FiExternalLink} from 'react-icons/fi';
-
-const socialLinks = [
-  {
-    icon: <FaGithub />,
-    title: "GitHub",
-    link: "https://github.com/ZoraizSibtain",
-  },
-  {
-    icon: <FaLinkedin />,
-    title: "LinkedIn",
-    link: "https://linkedin.com/in/zoraiz-sibtain",
-  },
-];
-
 const SocialButtons = () => {
   return (
-    <div className="space-y-3 py-5">
-      <span className="text-sm mb-2 block">Connect</span>
-      <div className="space-y-1">
-        {socialLinks.map((s) => (
-          <a
-            key={s.title}
-            href={s.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center cursor-pointer rounded-md text-sm px-1 py-1.5 hover:text-black hover:underline transition-colors duration-200"
-          >
-            <div className="flex items-center flex-grow gap-2">
-              <span>{s.icon}</span>
-              <span>{s.title}</span>
-            </div>
-            <span className="ml-1 text-gray-400">
-              <FiExternalLink size={12} />
-            </span>
-          </a>
-        ))}
-      </div>
+    <div className="pt-6 border-t border-slate-200/20 space-y-1">
+      <a
+        href="https://github.com/ZoraizSibtain"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-slate-500 flex items-center space-x-3 px-4 py-2 rounded-xl text-sm hover:text-slate-900 hover:bg-slate-200/50 transition-all duration-200"
+      >
+        <span className="material-symbols-outlined text-[18px]">code</span>
+        <span className="font-['Inter'] tracking-tight">GitHub</span>
+      </a>
+      <a
+        href="https://linkedin.com/in/zoraiz-sibtain"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-slate-500 flex items-center space-x-3 px-4 py-2 rounded-xl text-sm hover:text-slate-900 hover:bg-slate-200/50 transition-all duration-200"
+      >
+        <span className="material-symbols-outlined text-[18px]">work</span>
+        <span className="font-['Inter'] tracking-tight">LinkedIn</span>
+      </a>
     </div>
   );
 };

@@ -1,40 +1,29 @@
-import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar.js";
+import { useNavigate } from "react-router";
 import userImage from '@/assets/images/user.jpg';
-import {useNavigate} from "react-router";
 
 const AvatarBox = () => {
   const navigate = useNavigate();
 
-  const returnToHome = () => {
-    navigate('/')
-  }
-
   return (
     <div
-      className="flex items-center justify-start space-x-2 mb-8"
-      onClick={() => returnToHome()}
+      className="flex flex-col space-y-2 cursor-pointer"
+      onClick={() => navigate('/')}
     >
-      <Avatar>
-        <AvatarImage
-          alt="User Image"
+      <div className="h-12 w-12 rounded-full overflow-hidden bg-surface-container flex-shrink-0">
+        <img
+          alt="Zoraiz Sibtain"
           src={userImage}
+          className="h-full w-full object-cover"
         />
-        <AvatarFallback>
-          CN
-        </AvatarFallback>
-      </Avatar>
-      <div
-        className="text-xs flex flex-col space-y-1"
-      >
-        <span className="text-primary">
-          Zoraiz Sibtain
-        </span>
-        <span>
-          AI & QA Engineer
-        </span>
       </div>
+      <h1 className="font-['Space_Grotesk'] font-bold text-xl tracking-tighter text-slate-950">
+        Zoraiz Sibtain
+      </h1>
+      <p className="font-['Space_Grotesk'] tracking-tight text-[10px] uppercase text-slate-400">
+        Software & AI Engineer
+      </p>
     </div>
-  )
+  );
 };
 
 export default AvatarBox;

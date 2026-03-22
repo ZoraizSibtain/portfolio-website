@@ -1,9 +1,6 @@
-const Container = ({children, wide = false}: {children: React.ReactNode; wide?: boolean}) => {
-
+const Container = ({ children, wide = false }: { children: React.ReactNode; wide?: boolean }) => {
   return (
-    <div
-      className={`${wide ? 'max-w-4xl' : 'max-w-xl'} mx-auto grow p-6 sm:p-9 md:px-12 md:py-20`}
-    >
+    <div className={`${wide ? 'max-w-5xl' : 'max-w-3xl'} mx-auto grow px-8 py-12 md:px-12 md:py-16`}>
       {children}
     </div>
   );
