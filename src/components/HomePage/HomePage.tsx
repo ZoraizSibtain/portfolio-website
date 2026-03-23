@@ -32,7 +32,7 @@ const HomePage = () => {
             to="/experience"
             className="bg-primary text-on-primary px-7 py-3.5 rounded-xl font-['Inter'] font-bold text-sm tracking-tight flex items-center space-x-2 group hover:opacity-90 transition-opacity"
           >
-            <span>VIEW PROJECTS</span>
+            <span>VIEW EXPERIENCE</span>
             <span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
           </Link>
           <Link
@@ -78,7 +78,7 @@ const HomePage = () => {
               Building intelligent systems that scale beyond the sandbox.
             </h3>
             <div className="flex flex-wrap gap-2 mt-6">
-              {["LLM Integration", "Enterprise AI", "Cloud Architecture", "QA Automation"].map((tag) => (
+              {["LLM Integration", "Enterprise AI", "QA Automation"].map((tag) => (
                 <span key={tag} className="px-3 py-1.5 rounded-lg bg-white/10 text-xs font-['Space_Grotesk'] border border-white/10">
                   {tag}
                 </span>
@@ -91,6 +91,12 @@ const HomePage = () => {
         </div>
 
         {/* Featured Project Card */}
+        <a 
+          href="https://github.com/ZoraizSibtain/MagariHub" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="lg:col-span-2 block no-underline"
+        >
         <div className="lg:col-span-2 bg-surface-container-lowest p-7 rounded-2xl border border-outline-variant/15 group cursor-pointer hover:bg-surface-container-low transition-colors duration-300">
           <div className="flex justify-between items-start mb-5">
             <div>
@@ -116,6 +122,7 @@ const HomePage = () => {
             </span>
           </div>
         </div>
+        </a>
 
         {/* Location / Status Card */}
         <div className="bg-surface-container-low p-7 rounded-2xl flex flex-col justify-center items-center text-center">
@@ -125,7 +132,7 @@ const HomePage = () => {
           </div>
           <h3 className="font-['Inter'] font-bold text-lg text-on-surface">New York, NY</h3>
           <p className="text-sm text-on-surface-variant mt-1.5">AI & QA Engineer</p>
-          <p className="text-xs text-outline mt-1">The Curated Architect</p>
+          {/* <p className="text-xs text-outline mt-1">The Curated Architect</p> */}
         </div>
 
       </div>
