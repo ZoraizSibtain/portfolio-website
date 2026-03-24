@@ -40,14 +40,14 @@ const Home = () => {
           {/* Top App Bar */}
           <header className="fixed top-0 right-0 left-0 md:left-64 h-16 z-40 bg-white/80 backdrop-blur-md flex items-center justify-between px-6 md:px-8 border-b border-slate-200/20">
             <div className="flex items-center space-x-3">
-              <span className="font-['Space_Grotesk'] text-xs tracking-[0.2em] text-slate-400 uppercase">
+              <span className="font-['Space_Grotesk'] text-xs tracking-[0.2em] text-slate-500 uppercase">
                 {page.num}
               </span>
               <span className="font-['Inter'] font-semibold text-slate-900 text-sm tracking-tight uppercase">
                 {page.title}
               </span>
             </div>
-            <div className="flex items-center space-x-4 text-slate-400">
+            <div className="flex items-center space-x-4 text-slate-500">
               <button className="hover:text-slate-900 transition-colors">
                 <span className="material-symbols-outlined text-[22px]">notifications</span>
               </button>
@@ -86,14 +86,14 @@ const Home = () => {
             >
               <span
                 className={`material-symbols-outlined text-[22px] transition-colors ${
-                  active ? "text-primary" : "text-slate-400"
+                  active ? "text-primary" : "text-slate-500"
                 }`}
                 style={{ fontVariationSettings: active ? "'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24" : undefined }}
               >
                 {item.icon}
               </span>
               <span className={`text-[10px] font-['Space_Grotesk'] uppercase tracking-wide transition-colors ${
-                active ? "text-primary font-bold" : "text-slate-400"
+                active ? "text-primary font-bold" : "text-slate-500"
               }`}>
                 {item.label}
               </span>

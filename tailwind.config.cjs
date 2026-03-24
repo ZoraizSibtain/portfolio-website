@@ -49,7 +49,7 @@ module.exports = {
         "surface-variant": "#e1e2e4",
         "on-surface": "#191c1e",
         "on-surface-variant": "#45464d",
-        "outline": "#76777d",
+        "outline": "#4a4b52",
         "outline-variant": "#c6c6cd",
         "inverse-surface": "#2e3132",
         "inverse-on-surface": "#f0f1f3",

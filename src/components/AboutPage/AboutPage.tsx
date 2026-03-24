@@ -89,6 +89,8 @@ const AboutPage = () => {
             <img
               src={userImage}
               alt="Zoraiz Sibtain"
+              width={500}
+              height={500}
               className="w-full h-full object-cover"
             />
           </div>

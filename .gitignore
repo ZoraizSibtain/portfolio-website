@@ -29,3 +29,7 @@ yarn-error.log*
 Thumbs.db
 
 Design System.html
+PageSpeed Insights.html
+networklog(local-revised).json
+networklog(local).json
+networklog(published).json
