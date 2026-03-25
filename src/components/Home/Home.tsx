@@ -6,8 +6,11 @@ import AboutPage from "@/components/AboutPage/index";
 import ContactPage from "@/components/ContactPage/index";
 import ExperiencePage from "@/components/ExperiencePage/ExperiencePage";
 import SkillsPage from "@/components/SkillsPage/SkillsPage";
+import BlogPage from "@/components/BlogPage/index";
+import BlogPostPage from "@/components/BlogPostPage/index";
 import SeoPart from "@/components/Layout/SeoPart";
 import Container from "@/components/Layout/Container";
+import ScrollToTop from "@/components/Layout/ScrollToTop";
 
 const pageInfo: Record<string, { num: string; title: string }> = {
   "/":           { num: "01", title: "Home" },
@@ -15,6 +18,7 @@ const pageInfo: Record<string, { num: string; title: string }> = {
   "/experience": { num: "03", title: "Experience" },
   "/skills":     { num: "04", title: "Stack" },
   "/contact":    { num: "05", title: "Contact" },
+  "/blog":       { num: "06", title: "Blog" },
 };
 
 const mobileNav = [
@@ -23,14 +27,18 @@ const mobileNav = [
   { path: "/experience", icon: "terminal",        label: "Exp" },
   { path: "/skills",     icon: "memory",          label: "Stack" },
   { path: "/contact",    icon: "alternate_email", label: "Contact" },
+  { path: "/blog",       icon: "edit_note",       label: "Blog" },
 ];
 
 const Home = () => {
   const { pathname } = useLocation();
-  const page = pageInfo[pathname] ?? { num: "—", title: "Portfolio" };
+  const page = pathname.startsWith('/blog')
+    ? pageInfo["/blog"]
+    : (pageInfo[pathname] ?? { num: "—", title: "Portfolio" });
 
   return (
     <>
+      <ScrollToTop />
       <SeoPart />
       <div className="flex items-stretch min-w-full">
         <Sider />
@@ -47,14 +55,14 @@ const Home = () => {
                 {page.title}
               </span>
             </div>
-            <div className="flex items-center space-x-4 text-slate-500">
+            {/* <div className="flex items-center space-x-4 text-slate-500">
               <button className="hover:text-slate-900 transition-colors">
                 <span className="material-symbols-outlined text-[22px]">notifications</span>
               </button>
               <button className="hover:text-slate-900 transition-colors">
                 <span className="material-symbols-outlined text-[22px]">account_circle</span>
               </button>
-            </div>
+            </div> */}
           </header>
 
           {/* Page content — extra bottom padding on mobile for the bottom nav */}
@@ -66,6 +74,8 @@ const Home = () => {
                 <Route element={<ExperiencePage />} path="/experience" />
                 <Route element={<SkillsPage />} path="/skills" />
                 <Route element={<ContactPage />} path="/contact" />
+                <Route element={<BlogPage />} path="/blog" />
+                <Route element={<BlogPostPage />} path="/blog/:slug" />
               </Routes>
             </Container>
             <Footer />
@@ -77,7 +87,10 @@ const Home = () => {
       {/* Mobile Bottom Nav — hidden on md+ */}
       <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-t border-slate-200/30 flex items-center justify-around px-2 h-16">
         {mobileNav.map((item) => {
-          const active = pathname === item.path;
+          const active =
+            item.path === '/'
+              ? pathname === '/'
+              : pathname === item.path || pathname.startsWith(item.path + '/');
           return (
             <Link
               key={item.path}

@@ -6,6 +6,7 @@ const links = [
   { path: "/experience", name: "Experience", icon: "terminal" },
   { path: "/skills",     name: "Stack",      icon: "memory" },
   { path: "/contact",    name: "Contact",    icon: "alternate_email" },
+  { path: "/blog",       name: "Blog",       icon: "edit_note" },
 ];
 
 const RouteButtons = () => {
@@ -19,7 +20,7 @@ const RouteButtons = () => {
           to={link.path}
           className={
             `flex items-center space-x-3 px-4 py-3 rounded-xl text-sm transition-all duration-300 ` +
-            (pathname === link.path
+            ((link.path === '/' ? pathname === '/' : pathname === link.path || pathname.startsWith(link.path + '/'))
               ? "bg-slate-950 text-white font-semibold"
               : "text-slate-500 hover:text-slate-900 hover:bg-slate-200/50 scale-95 active:scale-90")
           }

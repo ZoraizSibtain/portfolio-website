@@ -30,6 +30,11 @@ const pageMeta: Record<string, { title: string; description: string }> = {
     description:
       "Get in touch with Zoraiz Sibtain for software engineering, AI integration projects, or collaboration opportunities.",
   },
+  "/blog": {
+    title: "Blog — Zoraiz Sibtain",
+    description:
+      "Field notes on AI engineering, LLM integration, and automation by Zoraiz Sibtain — Software & AI Engineer.",
+  },
 };
 
 const structuredData = {
@@ -59,7 +64,8 @@ const structuredData = {
 
 const SeoPart = () => {
   const { pathname } = useLocation();
-  const meta = pageMeta[pathname] ?? pageMeta["/"];
+  const metaKey = pathname.startsWith('/blog') ? '/blog' : pathname;
+  const meta = pageMeta[metaKey] ?? pageMeta["/"];
   const canonical = `${BASE_URL}${pathname === "/" ? "" : pathname}`;
 
   return (
