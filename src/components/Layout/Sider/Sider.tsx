@@ -4,7 +4,7 @@ import SocialButtons from "@/components/Layout/Sider/SocialButtons";
 
 const Sider = () => {
   return (
-    <aside className="hidden md:flex h-screen w-64 fixed left-0 top-0 border-r border-slate-200/20 bg-slate-50/80 backdrop-blur-xl flex-col p-6 space-y-8 z-50">
+    <aside className="hidden md:flex h-screen w-64 fixed left-0 top-0 border-r border-outline-variant/20 bg-surface-container-low/80 backdrop-blur-xl flex-col p-6 space-y-8 z-50">
       <AvatarBox />
       <RouteButtons />
       {/* <a

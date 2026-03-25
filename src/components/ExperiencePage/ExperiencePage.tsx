@@ -146,7 +146,7 @@ const ExperiencePage = () => {
       <div className="space-y-6">
         {experiences.map((exp, i) => (
           <FadeIn key={i} delay={i * 100}>
-            <div className="bg-surface-container-low p-8 rounded-2xl relative overflow-hidden group hover:bg-surface-container transition-colors duration-300">
+            <div className="bg-surface-container-low p-8 rounded-2xl relative overflow-hidden group hover:bg-surface-container transition-colors duration-300 shadow-sm hover:shadow-md">
 
               <div className="flex justify-between items-start mb-8">
                 <div>
@@ -203,7 +203,7 @@ const ExperiencePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {education.map((edu, i) => (
               <FadeIn key={i} delay={i * 80}>
-                <div className="bg-surface-container-lowest p-7 rounded-2xl border border-outline-variant/15 h-full">
+                <div className="bg-surface-container-lowest p-7 rounded-2xl border border-outline-variant/15 h-full shadow-sm">
                   <span className="font-['Space_Grotesk'] text-[10px] text-outline tracking-widest uppercase block mb-3">
                     {edu.period} · {edu.location}
                   </span>

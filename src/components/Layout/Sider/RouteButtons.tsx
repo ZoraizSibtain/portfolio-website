@@ -21,8 +21,8 @@ const RouteButtons = () => {
           className={
             `flex items-center space-x-3 px-4 py-3 rounded-xl text-sm transition-all duration-300 ` +
             ((link.path === '/' ? pathname === '/' : pathname === link.path || pathname.startsWith(link.path + '/'))
-              ? "bg-slate-950 text-white font-semibold"
-              : "text-slate-500 hover:text-slate-900 hover:bg-slate-200/50 scale-95 active:scale-90")
+              ? "bg-primary text-on-primary font-semibold"
+              : "text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high/50 scale-95 active:scale-90")
           }
         >
           <span className="material-symbols-outlined text-[20px]">{link.icon}</span>

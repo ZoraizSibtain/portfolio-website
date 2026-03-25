@@ -35,7 +35,7 @@ const ContactPage = () => {
           Get in<br />Touch
         </h1>
         <p className="font-['Inter'] text-on-surface-variant font-light text-lg leading-relaxed max-w-lg">
-          If you're working on something in AI, automation, or software quality — or just want to connect, reach out.
+          If you're working on something in AI, automation, software development or just want to connect, reach out.
         </p>
       </div>
 

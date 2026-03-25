@@ -68,7 +68,6 @@ const sections: SkillSection[] = [
       { name: "Selenium",     category: "Automation", icon: <SiSelenium /> },
       { name: "CI/CD",        category: "DevOps",     icon: <FiGitMerge /> },
       { name: "API Testing",  category: "QA",         icon: <FaServer /> },
-      { name: "Manual QA",    category: "QA",         icon: <FaUserCheck /> },
     ],
   },
   {
@@ -78,8 +77,6 @@ const sections: SkillSection[] = [
       { name: "JWT",                   category: "Auth",            icon: <FaLock /> },
       { name: "Firebase",              category: "Auth",            icon: <SiFirebase /> },
       { name: "Git",                   category: "Version Control", icon: <SiGit /> },
-      { name: "UML",                   category: "Architecture",    icon: <FiLayout /> },
-      { name: "Systems Architecture",  category: "Design",          icon: <FaProjectDiagram /> },
     ],
   },
 ];
@@ -116,9 +113,9 @@ const SkillsPage = () => {
       </div>
 
       {/* Sections */}
-      <div className="space-y-8">
+      <div className="space-y-4">
         {sections.map((section) => (
-          <div key={section.title}>
+          <div key={section.title} className="bg-surface-container-lowest rounded-2xl p-6 shadow-sm border border-outline-variant/10">
             <div className="flex items-center space-x-3 mb-4">
               <span className="material-symbols-outlined text-primary text-[18px]">{section.icon}</span>
               <h2 className="text-xs font-['Space_Grotesk'] font-bold uppercase tracking-widest text-on-surface-variant">

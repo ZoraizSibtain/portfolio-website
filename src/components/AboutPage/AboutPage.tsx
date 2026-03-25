@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import userImage from "@/assets/images/user.jpg";
+import userImage from "@/assets/images/user-highres.jpg";
 
 const goals = [
   { title: "Athletic Peak",  sub: "A sub-25min 5K run.",              icon: "speed"       },
@@ -15,14 +15,26 @@ const AboutPage = () => {
 
       {/* ── Hero ── */}
       <section className="space-y-6">
-        <div className="inline-block px-3 py-1 bg-surface-container-highest rounded-full">
-          <span className="text-[10px] font-bold tracking-widest uppercase font-['Space_Grotesk'] text-on-surface-variant">
-            Based in Bronx, NY
-          </span>
+        {/* Hero image with floating location badge */}
+        <div className="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-surface-container-low shadow-sm">
+          <img
+            src={userImage}
+            alt="Zoraiz Sibtain"
+            width={800}
+            height={600}
+            loading="lazy"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute bottom-4 left-4 inline-flex items-center gap-1.5 px-3 py-1.5 bg-surface-container-highest/90 backdrop-blur-sm rounded-full border border-outline-variant/20 shadow-sm">
+            <span className="material-symbols-outlined text-[14px] text-on-surface-variant">location_on</span>
+            <span className="text-[10px] font-bold tracking-widest uppercase font-['Space_Grotesk'] text-on-surface-variant">
+              Based in Bronx, NY
+            </span>
+          </div>
         </div>
         <h1 className="text-5xl font-bold tracking-tight text-primary leading-[1.1] font-['Space_Grotesk']">
           Zoraiz Sibtain.<br />
-          <span className="text-on-primary-container">Building Automations.</span>
+          <span className="text-on-primary-container">Building Solutions.</span>
         </h1>
         <p className="text-lg leading-relaxed text-on-surface-variant max-w-md font-['Inter']">
           Software Engineer obsessed with eliminating manual toil through intelligent architectural design.
@@ -40,7 +52,7 @@ const AboutPage = () => {
 
         <div className="space-y-6">
           {/* Main career card */}
-          <div className="bg-surface-container-low p-8 rounded-xl space-y-6">
+          <div className="bg-surface-container-low p-8 rounded-xl space-y-6 shadow-sm">
             <span className="material-symbols-outlined text-3xl text-primary">terminal</span>
             <div className="space-y-4">
               <h3 className="text-xl font-bold font-['Space_Grotesk']">The Automation Architect</h3>
@@ -54,14 +66,14 @@ const AboutPage = () => {
 
           {/* 2-col project cards */}
           <div className="grid grid-cols-2 gap-6">
-            <div className="bg-surface-container-highest p-6 rounded-xl space-y-4">
+            <div className="bg-surface-container-highest p-6 rounded-xl space-y-4 shadow-sm">
               <span className="material-symbols-outlined text-2xl text-on-surface">directions_car</span>
               <p className="text-xs font-bold font-['Space_Grotesk'] uppercase tracking-widest text-on-surface">MagariHub</p>
               <p className="text-sm leading-snug font-medium font-['Inter'] text-on-surface-variant">
                 Engineering an AI car platform to redefine vehicle sourcing.
               </p>
             </div>
-            <div className="bg-primary-container p-6 rounded-xl space-y-4">
+            <div className="bg-primary-container p-6 rounded-xl space-y-4 shadow-sm">
               <span className="material-symbols-outlined text-2xl text-on-primary">token</span>
               <p className="text-xs font-bold font-['Space_Grotesk'] uppercase tracking-widest text-on-primary-container">
                 Imatic Technologies Limited
@@ -83,40 +95,29 @@ const AboutPage = () => {
           </span>
         </div>
 
-        {/* Photo + floating card */}
-        <div className="relative mb-16 md:mb-0">
-          <div className="w-full aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low">
-            <img
-              src={userImage}
-              alt="Zoraiz Sibtain"
-              width={500}
-              height={500}
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="mt-6 md:mt-0 bg-surface-container-lowest p-8 shadow-[0_20px_40px_rgba(15,23,42,0.06)] rounded-xl md:absolute md:-bottom-12 md:-right-6 md:w-3/4">
-            <h3 className="text-lg font-bold mb-4 font-['Space_Grotesk']">Tinkering &amp; Trails</h3>
-            <p className="text-on-surface-variant leading-relaxed text-sm mb-6 font-['Inter']">
-              When I'm not in the terminal, you'll find me under the hood of a car or on a mountain side.
-              My "learn-by-building" attitude extends to everything, from fitness and car maintenance to
-              exploring the great outdoors.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold tracking-widest font-['Space_Grotesk'] uppercase"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
+        {/* Tinkering card */}
+        <div className="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/10">
+          <h3 className="text-lg font-bold mb-4 font-['Space_Grotesk']">Tinkering &amp; Trails</h3>
+          <p className="text-on-surface-variant leading-relaxed text-sm mb-6 font-['Inter']">
+            When I'm not in the terminal, you'll find me under the hood of a car or on a mountain side.
+            My "learn-by-building" attitude extends to everything, from fitness and car maintenance to
+            exploring the great outdoors.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {tags.map((tag) => (
+              <span
+                key={tag}
+                className="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-[10px] font-bold tracking-widest font-['Space_Grotesk'] uppercase"
+              >
+                {tag}
+              </span>
+            ))}
           </div>
         </div>
 
         {/* Recent obsession cards */}
-        <div className="md:mt-20 grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div className="bg-surface-container-low p-8 rounded-xl flex items-center gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="bg-surface-container-low p-8 rounded-xl flex items-center gap-6 shadow-sm">
             <div className="flex-shrink-0 w-20 h-20 rounded-xl bg-surface-container-highest flex items-center justify-center">
               <span className="material-symbols-outlined text-3xl text-on-surface-variant">local_cafe</span>
             </div>
@@ -127,7 +128,7 @@ const AboutPage = () => {
               <p className="text-sm font-medium font-['Inter']">Kaafi by Chaiguy — serves the best Gulab jamun doughnuts.</p>
             </div>
           </div>
-          <div className="bg-surface-container-low p-8 rounded-xl flex items-center gap-6">
+          <div className="bg-surface-container-low p-8 rounded-xl flex items-center gap-6 shadow-sm">
             <div className="flex-shrink-0 w-20 h-20 rounded-xl bg-surface-container-highest flex items-center justify-center">
               <span className="material-symbols-outlined text-3xl text-on-surface-variant">lunch_dining</span>
             </div>
@@ -154,7 +155,7 @@ const AboutPage = () => {
           {goals.map(({ title, sub, icon }) => (
             <div
               key={title}
-              className="group flex items-center justify-between p-6 bg-surface-container-lowest rounded-xl hover:bg-primary hover:text-on-primary transition-all duration-300 cursor-default border border-outline-variant/10"
+              className="group flex items-center justify-between p-6 bg-surface-container-lowest rounded-xl hover:bg-primary hover:text-on-primary transition-all duration-300 cursor-default border border-outline-variant/10 shadow-sm hover:shadow-md"
             >
               <div className="space-y-1">
                 <h4 className="text-lg font-bold font-['Space_Grotesk']">{title}</h4>

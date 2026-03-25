@@ -47,7 +47,7 @@ const HomePage = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 
         {/* Education Card */}
-        <div className="bg-surface-container-low p-7 rounded-2xl flex flex-col justify-between">
+        <div className="bg-surface-container-low p-7 rounded-2xl flex flex-col justify-between shadow-sm">
           <div>
             <span className="font-['Space_Grotesk'] text-[10px] text-outline tracking-widest uppercase">
               Academic Background
@@ -68,7 +68,7 @@ const HomePage = () => {
         </div>
 
         {/* AI Expertise Card */}
-        <div className="md:col-span-1 lg:col-span-2 bg-primary text-on-primary p-7 rounded-2xl relative overflow-hidden">
+        <div className="md:col-span-1 lg:col-span-2 bg-primary text-on-primary p-7 rounded-2xl relative overflow-hidden shadow-sm">
           <div className="relative z-10">
             <span className="font-['Space_Grotesk'] text-[10px] text-on-primary/60 tracking-widest uppercase">
               Expertise
@@ -96,7 +96,7 @@ const HomePage = () => {
           rel="noopener noreferrer"
           className="lg:col-span-2 block no-underline"
         >
-        <div className="lg:col-span-2 bg-surface-container-lowest p-7 rounded-2xl border border-outline-variant/15 group cursor-pointer hover:bg-surface-container-low transition-colors duration-300">
+        <div className="lg:col-span-2 bg-surface-container-lowest p-7 rounded-2xl border border-outline-variant/15 group cursor-pointer hover:bg-surface-container-low transition-colors duration-300 shadow-sm hover:shadow-md">
           <div className="flex justify-between items-start mb-5">
             <div>
               <span className="font-['Space_Grotesk'] text-[10px] text-outline tracking-widest uppercase">
@@ -124,7 +124,7 @@ const HomePage = () => {
         </a>
 
         {/* Location / Status Card */}
-        <div className="bg-surface-container-low p-7 rounded-2xl flex flex-col justify-center items-center text-center">
+        <div className="bg-surface-container-low p-7 rounded-2xl flex flex-col justify-center items-center text-center shadow-sm">
           <div className="h-20 w-20 rounded-full border border-outline-variant/30 flex items-center justify-center mb-5 relative">
             <div className="absolute inset-0 rounded-full border-t-2 border-primary animate-spin-slow"></div>
             <span className="material-symbols-outlined text-2xl text-on-surface">location_on</span>

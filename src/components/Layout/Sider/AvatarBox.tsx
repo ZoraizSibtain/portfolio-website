@@ -18,10 +18,10 @@ const AvatarBox = () => {
           className="h-full w-full object-cover"
         />
       </div>
-      <h1 className="font-['Space_Grotesk'] font-bold text-xl tracking-tighter text-slate-950">
+      <h1 className="font-['Space_Grotesk'] font-bold text-xl tracking-tighter text-on-surface">
         Zoraiz Sibtain
       </h1>
-      <p className="font-['Space_Grotesk'] tracking-tight text-[10px] uppercase text-slate-500">
+      <p className="font-['Space_Grotesk'] tracking-tight text-[10px] uppercase text-on-surface-variant">
         Software & AI Engineer
       </p>
     </div>
