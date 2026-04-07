@@ -1,13 +1,48 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      (function(){var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark');}})();
+    </script>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="theme-color" content="#fff" />
-    <title>App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="theme-color" content="#0f172a" />
+
+    <!-- Fallback SEO (overridden per-page by react-helmet) -->
+    <title>Zoraiz Sibtain — Software & AI Engineer</title>
+    <meta name="description" content="Zoraiz Sibtain is a Software & AI Engineer based in New York specializing in LLM integration, enterprise applications, and QA automation." />
+    <meta name="author" content="Zoraiz Sibtain" />
+    <link rel="canonical" href="https://zoraizsibtain.com/" />
+
+    <!-- Open Graph fallback -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://zoraizsibtain.com/" />
+    <meta property="og:title" content="Zoraiz Sibtain — Software & AI Engineer" />
+    <meta property="og:description" content="Zoraiz Sibtain is a Software & AI Engineer based in New York specializing in LLM integration, enterprise applications, and QA automation." />
+    <meta property="og:image" content="https://zoraizsibtain.com/og-image.jpg" />
+    <meta property="og:site_name" content="Zoraiz Sibtain" />
+
+    <!-- Twitter Card fallback -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Zoraiz Sibtain — Software & AI Engineer" />
+    <meta name="twitter:description" content="Software & AI Engineer specializing in LLM integration and scalable enterprise applications." />
+    <meta name="twitter:image" content="https://zoraizsibtain.com/og-image.jpg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="ZoraizSibtain" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Fonts: preconnect + non-render-blocking load -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" /></noscript>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" /></noscript>
   </head>
   <body>
     <div id="root"></div>
