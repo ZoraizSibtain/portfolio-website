@@ -27,3 +27,12 @@ yarn-error.log*
 # OS files
 .DS_Store
 Thumbs.db
+
+#other files
+Design System.html
+PageSpeed Insights.html
+networklog(local-revised).json
+networklog(local).json
+networklog(published).json
+networklog(published-revised).json
+PageSpeed Insights (new).html

@@ -1,6 +1,4 @@
-import {useEffect, useRef} from 'react';
-import ContainerTitle from "@/components/Common/ContainerTitle.js";
-import {FiExternalLink} from 'react-icons/fi';
+import { useEffect, useRef } from 'react';
 
 type ExperienceItem = {
   role: string;
@@ -9,6 +7,7 @@ type ExperienceItem = {
   subtitle: string;
   bullets: string[];
   tags: string[];
+  badge?: string;
 };
 
 type EducationItem = {
@@ -26,6 +25,7 @@ const experiences: ExperienceItem[] = [
     company: "True Security Consultant Limited",
     period: "Nov 2021 – Dec 2024",
     subtitle: "Led QA team of 10, automated documentation and incident analysis with AI.",
+    badge: "LEADERSHIP",
     bullets: [
       "Implemented ChatGPT AI to automate SOP reviewing, reducing documentation time from 5 hours to 90 minutes per procedure.",
       "Deployed ChatGPT to analyze production incident patterns across 200+ tickets, identifying root causes 60% faster and reducing recurring issues by 25%.",
@@ -40,6 +40,7 @@ const experiences: ExperienceItem[] = [
     company: "Imatic Technologies Limited",
     period: "Apr 2021 – Oct 2021",
     subtitle: "Built automated test suites and supported CI/CD adoption across the dev workflow.",
+    badge: "ENGINEERING",
     bullets: [
       "Implemented automated testing solutions using Selenium, significantly reducing regression testing time.",
       "Integrated automated tests into the development workflow, supporting CI/CD adoption.",
@@ -54,6 +55,7 @@ const experiences: ExperienceItem[] = [
     company: "Kian Joo Can Factory Bhd",
     period: "Apr 2018 – Jun 2018",
     subtitle: "Server maintenance, asset audits, and ticketing system implementation.",
+    badge: "OPERATIONS",
     bullets: [
       "Performed daily server backups and validation checks to ensure data integrity.",
       "Conducted hardware and system audits across multiple locations, improving asset tracking accuracy.",
@@ -82,7 +84,7 @@ const education: EducationItem[] = [
   },
 ];
 
-function FadeIn({children, delay = 0}: {children: React.ReactNode; delay?: number}) {
+function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -100,7 +102,7 @@ function FadeIn({children, delay = 0}: {children: React.ReactNode; delay?: numbe
           observer.disconnect();
         }
       },
-      {threshold: 0.05}
+      { threshold: 0.05 }
     );
 
     observer.observe(el);
@@ -110,9 +112,9 @@ function FadeIn({children, delay = 0}: {children: React.ReactNode; delay?: numbe
   return <div ref={ref}>{children}</div>;
 }
 
-function Tag({label}: {label: string}) {
+function Tag({ label }: { label: string }) {
   return (
-    <span className="text-xs text-gray-600 bg-gray-100 px-2 py-1 rounded-md border border-gray-200">
+    <span className="text-xs text-on-surface-variant bg-surface-container px-3 py-1 rounded-full font-['Space_Grotesk'] border border-outline-variant/20">
       {label}
     </span>
   );
@@ -120,109 +122,114 @@ function Tag({label}: {label: string}) {
 
 const ExperiencePage = () => {
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
+
+      {/* Header */}
       <FadeIn>
-        <ContainerTitle title="Experience" />
-        <p className="text-gray-500 text-sm mt-1">A timeline of my professional journey.</p>
+        <div className="mb-10">
+          <span className="font-['Space_Grotesk'] text-xs uppercase tracking-[0.2em] text-outline block mb-4">
+            03 / Career Journey
+          </span>
+          <h1 className="font-['Inter'] font-extrabold text-6xl tracking-tighter leading-[0.9] text-on-surface mb-6">
+            Bridging the gap between<br />
+            <span className="text-outline-variant italic">Engineering</span>{" & "}
+            <span className="bg-primary-container text-white px-3 py-1 inline-block">AI Logic</span>.
+          </h1>
+          <p className="text-lg text-on-secondary-container font-['Inter'] font-light leading-relaxed max-w-2xl">
+            A career dedicated to precision — from leading QA teams to developing autonomous AI workflows,
+            transforming complex testing paradigms into streamlined digital architecture.
+          </p>
+        </div>
       </FadeIn>
 
-      {/* Vertical timeline */}
-      <div className="relative mt-6">
-        {/* Timeline line */}
-        <div className="hidden md:block absolute left-[168px] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-300 to-transparent" />
+      {/* Experience Timeline */}
+      <div className="space-y-6">
+        {experiences.map((exp, i) => (
+          <FadeIn key={i} delay={i * 100}>
+            <div className="bg-surface-container-low p-8 rounded-2xl relative overflow-hidden group hover:bg-surface-container transition-colors duration-300 shadow-sm hover:shadow-md">
 
-        <div className="space-y-0">
-          {experiences.map((exp, i) => (
-            <FadeIn key={i} delay={i * 100}>
-              <div className="flex justify-start pt-8 md:gap-10 first:pt-0">
-                {/* Left: sticky date */}
-                <div className="hidden md:flex flex-col items-end shrink-0 w-40 pt-1 relative">
-                  <span className="text-gray-500 text-xs text-right leading-snug">{exp.period}</span>
-                  {/* Dot */}
-                  <div className="absolute -right-[14.5px] top-1 h-3 w-3 rounded-full bg-white border-2 border-gray-400 mt-0.5" />
+              <div className="flex justify-between items-start mb-8">
+                <div>
+                  <span className="font-['Space_Grotesk'] text-[10px] text-outline tracking-widest uppercase block mb-2">
+                    {exp.period}
+                  </span>
+                  <h3 className="font-['Inter'] font-bold text-2xl text-on-surface tracking-tight">
+                    {exp.role}
+                  </h3>
+                  <p className="font-['Space_Grotesk'] text-sm uppercase tracking-widest text-on-secondary-container mt-1">
+                    {exp.company}
+                  </p>
                 </div>
-
-                {/* Right: content */}
-                <div className="flex-1 pl-0 md:pl-6 pb-8 space-y-2">
-                  {/* Mobile date */}
-                  <p className="md:hidden text-xs text-gray-500 mb-1">{exp.period}</p>
-
-                  <div className="flex flex-col gap-0.5">
-                    <span className="text-primary font-medium text-base">
-                      {exp.role} · <span className="text-gray-500 font-normal">{exp.company}</span>
-                    </span>
-                    <span className="text-gray-500 text-sm">{exp.subtitle}</span>
-                  </div>
-
-                  <ul className="space-y-1.5 text-gray-600 text-sm">
-                    {exp.bullets.map((b, j) => (
-                      <li key={j} className="flex gap-2 items-start">
-                        <span className="text-gray-400 shrink-0 mt-1">•</span>
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="flex flex-wrap gap-2 pt-1">
-                    {exp.tags.map((tag) => <Tag key={tag} label={tag} />)}
-                  </div>
-                </div>
+                {exp.badge && (
+                  <span className="bg-surface-container-lowest px-4 py-1.5 rounded-full border border-outline-variant/20 text-xs font-['Space_Grotesk'] font-bold text-primary">
+                    {exp.badge}
+                  </span>
+                )}
               </div>
-            </FadeIn>
-          ))}
-        </div>
+
+              <p className="text-sm text-on-surface-variant leading-relaxed mb-5 italic">
+                {exp.subtitle}
+              </p>
+
+              <ul className="space-y-2.5 mb-6">
+                {exp.bullets.map((b, j) => (
+                  <li key={j} className="flex items-start space-x-3">
+                    <span className="material-symbols-outlined text-primary text-[16px] mt-0.5 flex-shrink-0">check_circle</span>
+                    <span className="text-sm text-on-surface-variant leading-relaxed">{b}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex flex-wrap gap-2">
+                {exp.tags.map((tag) => <Tag key={tag} label={tag} />)}
+              </div>
+
+              <div className="absolute -right-8 -bottom-8 opacity-5">
+                <span className="material-symbols-outlined" style={{ fontSize: '120px' }}>terminal</span>
+              </div>
+            </div>
+          </FadeIn>
+        ))}
       </div>
 
       {/* Education */}
       <FadeIn delay={150}>
-        <div className="pt-6 space-y-4">
-          <h2 className="text-gray-700 text-xs font-medium uppercase tracking-widest">Education</h2>
+        <div className="pt-4 space-y-4">
+          <div className="flex items-center space-x-4 mb-6">
+            <span className="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-outline">Education</span>
+            <div className="flex-1 h-px bg-outline-variant/20"></div>
+          </div>
 
-          <div className="relative">
-            <div className="hidden md:block absolute left-[168px] top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-300 to-transparent" />
-
-            <div className="space-y-0">
-              {education.map((edu, i) => (
-                <FadeIn key={i} delay={i * 80}>
-                  <div className="flex justify-start pt-6 md:gap-10 first:pt-0">
-                    <div className="hidden md:flex flex-col items-end shrink-0 w-40 pt-1 relative">
-                      <span className="text-gray-500 text-xs text-right leading-snug">{edu.period}</span>
-                      <div className="absolute -right-[14.5px] top-1 h-3 w-3 rounded-full bg-white border-2 border-gray-400 mt-0.5" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {education.map((edu, i) => (
+              <FadeIn key={i} delay={i * 80}>
+                <div className="bg-surface-container-lowest p-7 rounded-2xl border border-outline-variant/15 h-full shadow-sm">
+                  <span className="font-['Space_Grotesk'] text-[10px] text-outline tracking-widest uppercase block mb-3">
+                    {edu.period} · {edu.location}
+                  </span>
+                  <h3 className="font-['Inter'] font-bold text-lg text-on-surface tracking-tight mb-1">
+                    {edu.degree}
+                  </h3>
+                  <p className="text-sm text-on-secondary-container font-['Space_Grotesk'] mb-4">
+                    {edu.school}
+                  </p>
+                  {edu.focus && (
+                    <p className="text-xs text-on-surface-variant leading-relaxed mb-4">
+                      {edu.focus}
+                    </p>
+                  )}
+                  {edu.tags && (
+                    <div className="flex flex-wrap gap-2">
+                      {edu.tags.map((tag) => <Tag key={tag} label={tag} />)}
                     </div>
-
-                    <div className="flex-1 pl-0 md:pl-6 pb-6 space-y-2">
-                      <p className="md:hidden text-xs text-gray-500 mb-1">{edu.period}</p>
-                      <div>
-                        <span className="text-primary font-medium text-base">{edu.degree}</span>
-                        <span className="text-gray-500 text-sm"> · {edu.school}</span>
-                      </div>
-                      <p className="text-gray-400 text-xs">{edu.location}</p>
-                      {edu.focus && <p className="text-gray-500 text-xs leading-relaxed">{edu.focus}</p>}
-                      {edu.tags && (
-                        <div className="flex flex-wrap gap-2 pt-1">
-                          {edu.tags.map((tag) => <Tag key={tag} label={tag} />)}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </FadeIn>
-              ))}
-            </div>
+                  )}
+                </div>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </FadeIn>
 
-      {/* Resume link */}
-      {/* <FadeIn delay={200}>
-        <a
-          href="/Zoraiz Sibtain Resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 py-6 text-sm text-gray-400 hover:text-white hover:underline transition-colors cursor-pointer"
-        >
-          View Full Resume <FiExternalLink size={12} />
-        </a>
-      </FadeIn> */}
     </div>
   );
 };
