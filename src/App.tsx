@@ -1,10 +1,11 @@
-import Home from "@/components/Home/Home.tsx";
+import Home from '@/components/Home/Home.tsx';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App() {
-
   return (
-    <div className="bg-surface text-on-surface antialiased">
-      <Home/>
+    <div className="bg-white text-primary">
+      <Home />
+      <Analytics />
     </div>
-  )
+  );
 }
